@@ -3223,7 +3223,7 @@ def get_event_status(node):
 @register.assignment_tag
 def get_user_course_groups(user_id):
 
-	user_id = int(user_id)
+	user_id = int(user_id) if user_id else user_id
 
 	gst_course = node_collection.one({'_type': 'GSystemType', 'name': u'CourseEventGroup'})
 
